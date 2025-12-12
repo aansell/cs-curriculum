@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    [SerializeField]
-    Vector2 offset;
+    [SerializeField] Vector2 offset;
+    [SerializeField] private bool lockY;
 
     private GameObject player;
     private Vector3 offset3D;
@@ -20,6 +20,11 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = player.transform.position + offset3D;
+        Vector3 newPosition = player.transform.position + offset3D;
+        if (lockY)
+        {
+            newPosition.y = transform.position.y;
+        }
+        transform.position = newPosition;
     }
 }

@@ -2,7 +2,7 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!78 &1
 TagManager:
-  serializedVersion: 2
+  serializedVersion: 3
   tags:
   - Coin
   - Enemy
@@ -54,3 +54,8 @@ TagManager:
   - name: Layer 3
     uniqueID: 4189426099
     locked: 0
+  - name: Top
+    uniqueID: 4031028257
+    locked: 0
+  m_RenderingLayers:
+  - Default
