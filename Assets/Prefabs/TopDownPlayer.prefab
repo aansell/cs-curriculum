@@ -146,7 +146,6 @@ GameObject:
   - component: {fileID: 8160508141717472264}
   - component: {fileID: 5399850899035531842}
   - component: {fileID: 8876637341984972107}
-  - component: {fileID: 1891255399030418428}
   - component: {fileID: 2648217343760227186}
   m_Layer: 0
   m_Name: Sprite
@@ -215,8 +214,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: -263939039
-  m_SortingLayer: 4
+  m_SortingLayerID: -160390533
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: -926494634, guid: 9898fe3efb89940db9c679149ec39210, type: 3}
@@ -251,18 +250,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1891255399030418428
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2835018103194152241}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2cfdbd5b64ec410e869903a8faa5cc7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2648217343760227186
 MonoBehaviour:
   m_ObjectHideFlags: 0

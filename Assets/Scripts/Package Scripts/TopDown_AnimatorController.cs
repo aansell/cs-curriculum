@@ -32,40 +32,25 @@ public class TopDown_AnimatorController : MonoBehaviour
     {
         if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
         {
-            if (Input.GetAxis("Horizontal") != 0 && Input.GetAxis("Vertical") != 0)
+            anim.SetBool("IsWalking", true);
+
+            if (Mathf.Abs(Input.GetAxis("Horizontal")) > Mathf.Abs(Input.GetAxis("Vertical")))
             {
-                anim.SetBool("IsWalking", true);
-                if (Input.GetAxis("Horizontal") > 0)
-                {
-                    anim.SetInteger("WalkDir", 1);
-                    sprite.flipX = true;
-                }
-                else if (Input.GetAxis("Horizontal") < 0)
-                {
-                    anim.SetInteger("WalkDir", 1);
-                    sprite.flipX = false;
-                }
+                // Horizontal movement
+                anim.SetInteger("WalkDir", 1);
+                sprite.flipX = Input.GetAxis("Horizontal") > 0;
             }
             else
             {
-                anim.SetBool("IsWalking", true);
-                if (Input.GetAxis("Horizontal") > 0)
-                {
-                    anim.SetInteger("WalkDir", 1);
-                    sprite.flipX = true;
-                }
-                else if (Input.GetAxis("Horizontal") < 0)
-                {
-                    anim.SetInteger("WalkDir", 1);
-                    sprite.flipX = false;
-                }
-                else if (Input.GetAxis("Vertical") > 0)
+                if (Input.GetAxis("Vertical") > 0)
                 {
                     anim.SetInteger("WalkDir", 0);
+                    sprite.flipX = true;
                 }
-                else if (Input.GetAxis("Vertical") < 0)
+                else
                 {
                     anim.SetInteger("WalkDir", 2);
+                    sprite.flipX = false;
                 }
             }
         }
