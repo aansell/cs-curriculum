@@ -200,11 +200,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3736838050167469039, guid: fbdc99957549444bfba281e61d9d218c,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 141455466}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fbdc99957549444bfba281e61d9d218c, type: 3}
 --- !u!4 &141455464 stripped
 Transform:
@@ -212,30 +208,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 141455463}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &141455465 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3736838050167469039, guid: fbdc99957549444bfba281e61d9d218c,
-    type: 3}
-  m_PrefabInstance: {fileID: 141455463}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &141455466
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 141455465}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d67f37352bc2534bbe0764a04acdfab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  enemyAnimator: {fileID: 0}
-  enemySprite: {fileID: 0}
-  maxAttackRange: 1.5
-  maxChaseRange: 10
-  chaseSpeed: 2.5
-  patrolSpeed: 1
 --- !u!1001 &186509170
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40549,11 +40521,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3736838050167469039, guid: fbdc99957549444bfba281e61d9d218c,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 739056011}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fbdc99957549444bfba281e61d9d218c, type: 3}
 --- !u!4 &739056009 stripped
 Transform:
@@ -40561,30 +40529,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 739056008}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &739056010 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3736838050167469039, guid: fbdc99957549444bfba281e61d9d218c,
-    type: 3}
-  m_PrefabInstance: {fileID: 739056008}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &739056011
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 739056010}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d67f37352bc2534bbe0764a04acdfab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  enemyAnimator: {fileID: 0}
-  enemySprite: {fileID: 0}
-  maxAttackRange: 1.5
-  maxChaseRange: 10
-  chaseSpeed: 2.5
-  patrolSpeed: 1
 --- !u!1 &747287426
 GameObject:
   m_ObjectHideFlags: 0
@@ -84715,11 +84659,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3736838050167469039, guid: fbdc99957549444bfba281e61d9d218c,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1527921880}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fbdc99957549444bfba281e61d9d218c, type: 3}
 --- !u!4 &1527921878 stripped
 Transform:
@@ -84727,30 +84667,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1527921877}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1527921879 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3736838050167469039, guid: fbdc99957549444bfba281e61d9d218c,
-    type: 3}
-  m_PrefabInstance: {fileID: 1527921877}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1527921880
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1527921879}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d67f37352bc2534bbe0764a04acdfab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  enemyAnimator: {fileID: 0}
-  enemySprite: {fileID: 0}
-  maxAttackRange: 1.5
-  maxChaseRange: 10
-  chaseSpeed: 2.5
-  patrolSpeed: 1
 --- !u!4 &1572280894 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4281311786053241907, guid: 69c7343f050914c7787bbbe42c07b5b8,
