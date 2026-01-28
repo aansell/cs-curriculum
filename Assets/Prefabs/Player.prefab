@@ -11,8 +11,6 @@ GameObject:
   - component: {fileID: 7467044941926616162}
   - component: {fileID: 7570029282054326606}
   - component: {fileID: 6758783046734698584}
-  - component: {fileID: 1060576933409503419}
-  - component: {fileID: 3531845213246256098}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -116,32 +114,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1060576933409503419
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1864132543368370672}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2cfdbd5b64ec410e869903a8faa5cc7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &3531845213246256098
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1864132543368370672}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63f52f1c934da4613a15cf68f3b0f562, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animShovel: {fileID: 9100000, guid: 1ccf3beb0c6f246e99cc9a927f1fd12e, type: 2}
-  animAxe: {fileID: 9100000, guid: 8cf1007ae09a548dfb24a581133c15db, type: 2}
 --- !u!1 &5750745381796975156
 GameObject:
   m_ObjectHideFlags: 0
@@ -266,4 +238,3 @@ MonoBehaviour:
   ySpeed: 5
   jumpForce: 10
   isPlatformer: 0
-  groundCheck: {fileID: 0}

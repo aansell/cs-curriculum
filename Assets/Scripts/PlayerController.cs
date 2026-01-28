@@ -19,13 +19,17 @@ public class PlayerController : MonoBehaviour
     // Configuration to switch between game modes
     [SerializeField] private bool isPlatformer;
 
-    // Reference to the Rigidbody2D component for physics
+    // References to components
     private Rigidbody2D rb;
+    private Animator anim;
+    private SpriteRenderer sprite;
 
     private void Start()
     {
-        // Get the Rigidbody2D attached to this game object
+        // Get the components
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponentInChildren<Animator>();
+        sprite = GetComponentInChildren<SpriteRenderer>();
         
         // Determine the game mode based on the current scene name
         string currentSceneName = SceneManager.GetActiveScene().name;
@@ -39,8 +43,7 @@ public class PlayerController : MonoBehaviour
             isPlatformer = false;
         }
 
-        // Optional: Ensure gravity is correct for the mode
-        // Platformers need gravity, TopDown games usually don't
+        // Ensure gravity is correct for the mode
         if (isPlatformer)
         {
             rb.gravityScale = 2; 
@@ -53,25 +56,16 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        // 1. Get User Input (Human Readable)
-        // Reset directions to 0 first
+        // 1. Get User Input
         xDirection = Input.GetAxis("Horizontal"); // A/D or Left/Right Arrows
         yDirection = Input.GetAxis("Vertical");   // W/S or Up/Down Arrows
 
-
-        
-        // Calculate X Movement
+        // 2. Calculate Movement Vectors
         xVector = new Vector2(xDirection * xSpeed * Time.deltaTime, 0);
-        
 
-        // Calculate Y Movement
         if (isPlatformer)
         {
-            // In Platformer mode, W/S keys don't move us up/down (gravity/jump does that)
-            // So we set yVector to zero for movement
             yVector = new Vector2(0, 0);
-
-            // Handle Jumping separately
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
@@ -79,28 +73,66 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            // In TopDown mode, W/S keys move us up/down
             yVector = new Vector2(0, yDirection * ySpeed * Time.deltaTime);
         }
 
         // 3. Apply Movement
-        // transform.Translate moves the object by the calculated vectors
         transform.Translate(xVector);
         transform.Translate(yVector);
 
-        // 4. Interaction (Lever)
+        // 4. Handle Animations
+        UpdateAnimation();
+
+        // 5. Interaction (Lever)
         if (Input.GetKeyDown(KeyCode.E))
         {
-            // Find all Levers
             Lever[] levers = FindObjectsByType<Lever>(FindObjectsSortMode.None);
             foreach (Lever lever in levers)
             {
-                // Check distance
                 if (Vector3.Distance(transform.position, lever.transform.position) < 2.0f)
                 {
                     lever.Interact();
                 }
             }
+        }
+    }
+
+    private void UpdateAnimation()
+    {
+        if (anim == null || sprite == null) return;
+
+        // Check if we are moving at all
+        bool isMoving = xDirection != 0 || yDirection != 0;
+        anim.SetBool("IsWalking", isMoving);
+
+        if (isMoving)
+        {
+            // If moving horizontally (or more horizontally than vertically)
+            if (Mathf.Abs(xDirection) >= Mathf.Abs(yDirection))
+            {
+                anim.SetInteger("WalkDir", 1); // Side
+                sprite.flipX = xDirection > 0;
+            }
+            // If moving vertically (and we are NOT in platformer mode)
+            else if (!isPlatformer)
+            {
+                if (yDirection > 0)
+                {
+                    anim.SetInteger("WalkDir", 0); // Up
+                    sprite.flipX = true;
+                }
+                else
+                {
+                    anim.SetInteger("WalkDir", 2); // Down
+                    sprite.flipX = false;
+                }
+            }
+        }
+
+        // Handle Attack animation
+        if (Input.GetMouseButtonDown(0))
+        {
+            anim.SetTrigger("Attack");
         }
     }
 
