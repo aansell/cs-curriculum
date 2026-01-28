@@ -9,11 +9,11 @@ public class TurretController : MonoBehaviour
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private Transform projectileSpawnPoint;
 
-    private TopDownPlayerController playerController;
+    private PlayerController playerController;
 
     private void Start()
     {
-        playerController = GameObject.FindWithTag("Player").GetComponent<TopDownPlayerController>();
+        playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
         if (playerController == null)
         {
             Debug.LogError("Player object not found in the scene.");

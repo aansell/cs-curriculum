@@ -1,38 +1,43 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Lever : MonoBehaviour, IInteractable
+public class Lever : MonoBehaviour
 {
-  [SerializeField] private bool allowUnclicking;
+    // Simple visual swapping
+    [SerializeField] private Sprite offSprite;
+    [SerializeField] private Sprite onSprite;
 
-  [SerializeField] private Sprite offSprite;
-  [SerializeField] private Sprite onSprite;
+    // Events to trigger things (like opening a door)
+    [SerializeField] private UnityEvent onLeverOn;
+    [SerializeField] private UnityEvent onLeverOff;
 
-  public UnityEvent onLeverOn;
-  public UnityEvent onLeverOff;
+    private SpriteRenderer spriteRenderer;
+    private bool isOn = false;
 
-  private SpriteRenderer spriteRenderer;
-  private bool isOn = false;
-
-  private void Start()
-  {
-    spriteRenderer = GetComponent<SpriteRenderer>();
-    spriteRenderer.sprite = offSprite;
-  }
-
-  public void OnInteract(GameObject interactor)
-  {
-    if (!isOn)
+    private void Start()
     {
-      isOn = true;
-      spriteRenderer.sprite = onSprite;
-      onLeverOn.Invoke();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        // Default to off
+        if (spriteRenderer != null && offSprite != null)
+        {
+            spriteRenderer.sprite = offSprite;
+        }
     }
-    else if (allowUnclicking)
+
+    // Called by PlayerController when 'E' is pressed nearby
+    public void Interact()
     {
-      isOn = false;
-      spriteRenderer.sprite = offSprite;
-      onLeverOff.Invoke();
+        isOn = !isOn; // Toggle state
+
+        if (isOn)
+        {
+            if (spriteRenderer != null && onSprite != null) spriteRenderer.sprite = onSprite;
+            onLeverOn.Invoke();
+        }
+        else
+        {
+             if (spriteRenderer != null && offSprite != null) spriteRenderer.sprite = offSprite;
+             onLeverOff.Invoke();
+        }
     }
-  }
 }
