@@ -9,6 +9,7 @@ TagManager:
   - Axe
   - Spikes
   - Ground
+  - GroundCheck
   layers:
   - Default
   - TransparentFX
